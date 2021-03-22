@@ -20,7 +20,10 @@ Window {
             hoverEnabled: true
 
             onEntered: rect1.color = "green"
-            onExited: rect1.color = "red"
+            onExited:  {
+                console.log("Clicked")
+                rect1.color = "red"
+            }
         }
     }
 }
