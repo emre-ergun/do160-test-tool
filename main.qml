@@ -13,22 +13,46 @@ Window {
         id: comport
     }
 
-    Rectangle {
-        id: rect1
-        width: 100
-        height: 100
-        color: "red"
+    Column {
+        id: col
         anchors.centerIn: parent
+        spacing: 10
 
-        MouseArea {
-            anchors.fill: parent
-            hoverEnabled: true
+        Rectangle {
+            id: rect1
+            width: 100
+            height: 100
+            color: "red"
 
-            onEntered: rect1.color = "green"
-            onExited:  {
-                console.log("Clicked")
-                rect1.color = "red"
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+
+                onEntered: rect1.color = "green"
+                onExited:  {
+                    console.log("Rect1 Exited")
+                    rect1.color = "red"
+                }
+            }
+        }
+
+        Rectangle {
+            id: rect2
+            width: 100
+            height: 100
+            color: "red"
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+
+                onEntered: rect2.color = "green"
+                onExited:  {
+                    console.log("Rect2 Exited")
+                    rect2.color = "red"
+                }
             }
         }
     }
+
+
 }
