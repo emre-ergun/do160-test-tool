@@ -10,9 +10,12 @@ class ComPort : public QObject
 public:
     explicit ComPort(QObject *parent = nullptr);
 
-    void SendMessage(QString &msg);
+    void SendMessage(QString msg);
 
 signals:
+
+public slots:
+    void MessageChanged(QString msg);
 
 };
 
